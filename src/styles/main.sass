@@ -1,3 +1,78 @@
-.text 
-    color: red
+*
+    margin: 0
+    padding: 0
 
+$textColor: rgba(0, 0, 0, 1)
+
+%userSelect
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+body
+    background-color: rgb(255, 255, 255)
+
+h1, h2, h3, h4, p 
+    font-family: Montserrat, sans-serif
+
+a
+    text-decoration: none
+    color: $textColor
+
+.mainContainer
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    .innerMainContainer
+        width: 100%
+        // max-width: 1280px
+        // background-color: #f9f9f0
+
+header
+    background-color: #888888
+    // position: fixed
+    width: 100%
+    height: 10%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .logoContainer
+        margin-left: 55px
+        .logoText
+            text-transform: uppercase
+            font-size: 1.5vw
+            font-weight: 300
+            font-family: 'Montserrat', system-ui
+            letter-spacing: 1px
+            color: $textColor
+            cursor: pointer
+            @extend %userSelect
+            .go
+                font-weight: 700
+                letter-spacing: 2px
+    .headerTabsContainer
+        margin-right: 55px
+        width: 40%
+        text-align: center
+        .headerTabs
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+            li
+                text-transform: uppercase
+                list-style-type: none
+                padding: 0 10px
+                font-family: Montserrat, sans-serif
+                font-weight: 100
+                font-size: 1.1vw
+                letter-spacing: 1px
+                cursor: pointer
+                @extend %userSelect
+                &:last-child
+                    padding: 0
+                

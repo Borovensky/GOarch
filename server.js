@@ -4,7 +4,7 @@ var app = express();
 
 app.use(express.static('dist'))
 
-app.get(['/', '*'],  function(req, res){
+app.get(['/','*'],  function(req, res){
 	 fs.readFile('dist/index.html', 'utf-8', function(err, body){
 	 	res.send(body);
 	 });
