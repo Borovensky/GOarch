@@ -1,7 +1,7 @@
-import path from 'path';
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 var extractPlugin = new ExtractTextPlugin({
     filename: 'bundle.css'
