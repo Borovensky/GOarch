@@ -9,10 +9,12 @@ import WebFont from 'webfontloader';
 
 import App from './components/App';
 
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
 ReactDOM.render(
-    <Provider>
+    <Provider store={store}>
         <Router>
             <App/>
         </Router>
     </Provider>,
-     document.getElementById('root'));
+    document.getElementById('root'));

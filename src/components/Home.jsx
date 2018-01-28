@@ -1,4 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import TextContainer  from './common/TextContainer';
+import ImageContainer from './common/ImageContainer';
+
+var content = {
+    title: 'October 18, 2012',
+    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, amet dignissimos accusamus facilis recusandae vitae temporibus deserunt vero laborum quidem rem dolores et exercitationem ipsum perspiciatis neque non modi ut.'
+}
 
 class Home extends Component {
 
@@ -23,8 +30,10 @@ class Home extends Component {
     }
       
     updateWindowDimensions() {
-        this.setState({ width: window.innerWidth, height: window.innerHeight - 60 });
+        this.setState({ width: window.innerWidth, height: window.innerHeight - 80 });
     }
+
+
 
     render() {
 
@@ -41,53 +50,32 @@ class Home extends Component {
 
                 <div className='contentContaiver'>
                     <div className='innerContentContaiver'>
-
                         <div className='contentHeader'>
                             <h3 className='header'>our way to our dream</h3>
                         </div>
+                        <TextContainer 
+                            content={content}
+                        />
 
-                        <div className='paragraph'>
-                            <p className='text'>October 18, 2012</p>
-                            <br/>
-                            <p className='text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, amet dignissimos accusamus facilis recusandae vitae temporibus deserunt vero laborum quidem rem dolores et exercitationem ipsum perspiciatis neque non modi ut.</p>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                        </div>
-
+                        <TextContainer 
+                            content={content}
+                        />
                     </div>
+
+                    <div className='innerImageContainer'>
+                        <ImageContainer />
+                    </div>
+
+                    <div className='innerContentContaiver'>
+                        <TextContainer 
+                            content={content}
+                        />
+                    </div>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                 </div>
 
             </div>

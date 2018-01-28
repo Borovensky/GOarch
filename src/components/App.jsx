@@ -18,7 +18,6 @@ class App extends Component {
                 <div className='innerMainContainer'>
 
                     <header>
-
                         <div className='logoContainer'>
                             <h4 className='logoText'><span className='go'>GO</span>architects</h4>
                         </div>
@@ -41,8 +40,7 @@ class App extends Component {
                                     <Link to='/contacts'>Contacts</Link>
                                 </li>
                             </ul>
-                        </div>
-                        
+                        </div>      
                     </header>
 
                     <Route exact path='/' component={Home}/>
@@ -51,6 +49,31 @@ class App extends Component {
                     <Route path='/interior' component={Interior} />
                     <Route path='/about' component={About} />
                     <Route path='/contacts' component={Contacts} />
+
+                    <footer>
+                        <div className='footerInner'>
+                            <div className='footerLogo'>
+                                <h4 className='logoText'><span className='go'>GO</span><span className='Created'>2017. Created by Kate Bulatova</span></h4>  
+                            </div>
+                            
+                            <div className='footerTabsContainer'>
+                                <ul className='footerTabs'>
+                                    <li>
+                                        <Link to='#'>facebook</Link>
+                                    </li>
+                                    <li>
+                                        <Link to='#'>instagram</Link>
+                                    </li> 
+                                    <li>
+                                        <Link to='#'>behance</Link>
+                                    </li> 
+                                    <li>
+                                        <Link to='#'>pinterest</Link>
+                                    </li> 
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
                     
                 </div>
             </div>
