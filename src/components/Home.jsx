@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TextContainer  from './common/TextContainer';
-import ImageContainer from './common/ImageContainer';
+import ImageLinkContainer from './common/ImageLinkContainer';
 
 var content = {
     title: 'October 18, 2012',
@@ -38,7 +38,7 @@ class Home extends Component {
     render() {
 
         return(
-            <div className='homeContainer'>
+            <div className='pageContainer'>
 
                 <div className='backgroungImageContainer' style={{ width: this.state.width + 'px', height: this.state.height + 'px'}}>
                     <div className='image' style={{backgroundImage: 'url(./img/main1920x1080.png)'}}></div>    
@@ -51,19 +51,23 @@ class Home extends Component {
                 <div className='contentContaiver'>
                     <div className='innerContentContaiver'>
                         <div className='contentHeader'>
-                            <h3 className='header'>our way to our dream</h3>
+                            <h4 className='header'>our way to our dream</h4>
                         </div>
-                        <TextContainer 
+                        <TextContainer
                             content={content}
                         />
 
-                        <TextContainer 
+                        <TextContainer
                             content={content}
                         />
                     </div>
 
-                    <div className='innerImageContainer'>
-                        <ImageContainer />
+                    <div className='innerImageLinkContainer'>
+                        <ImageLinkContainer 
+                            image={'url(./img/bg.png)'}
+                            linkText={''}
+                            link={''}
+                        />
                     </div>
 
                     <div className='innerContentContaiver'>
@@ -72,10 +76,6 @@ class Home extends Component {
                         />
                     </div>
 
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
                 </div>
 
             </div>

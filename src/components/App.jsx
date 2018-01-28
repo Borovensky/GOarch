@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import FA from 'react-fontawesome';
 
 import Home from './Home';
 import Architecture from './Architecture';
@@ -8,18 +9,49 @@ import Interior from './Interior';
 import About from './About';
 import Contacts from './Contacts';
 import Project from './Project';
+import TabsCollapsedMenu from './common/TabsCollapsedMenu';
 
 class App extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            menuDisplay: 'none',
+            btnColor: '#000000',
+            contentToRender: ''
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+
+    } 
+
+    handleClick(renderContent) {
+        const { menuDisplay, btnColor } = this.state;
+
+        this.setState({
+            menuDisplay: menuDisplay == 'none' ? 'flex' : 'none',
+            btnColor: menuDisplay == 'none' ? '#ffffff' : '#000000',
+            contentToRender: renderContent
+        });
+    };
 
     render() {
 
         return(
             <div className='mainContainer'>
+                
+                <TabsCollapsedMenu
+                    onClick={this.handleClick}
+                    display={this.state.menuDisplay}
+                    render={this.state.contentToRender}
+                />
+
                 <div className='innerMainContainer'>
 
                     <header>
                         <div className='logoContainer'>
-                            <h4 className='logoText'><span className='go'>GO</span>architects</h4>
+                            <h5 className='logoText'><span className='go'>GO</span>architects</h5>
                         </div>
 
                         <div className='headerTabsContainer'>
@@ -34,14 +66,19 @@ class App extends Component {
                                     <Link to='/interior'>Interior</Link>
                                 </li>
                                 <li>
-                                    <Link to='/about'>About us</Link>
+                                    <Link to='/about'>About</Link>
                                 </li>
                                 <li>
                                     <Link to='/contacts'>Contacts</Link>
                                 </li>
                             </ul>
-                        </div>      
+                        </div>
+
                     </header>
+
+                    <div className='headerTabsButton' onClick={() => this.handleClick('header')} style={{ color: this.state.btnColor }}>
+                        <FA className='buttonIcon' name='bars'/>
+                    </div>
 
                     <Route exact path='/' component={Home}/>
                     <Route path='/architecture' component={Architecture} />
@@ -53,7 +90,7 @@ class App extends Component {
                     <footer>
                         <div className='footerInner'>
                             <div className='footerLogo'>
-                                <h4 className='logoText'><span className='go'>GO</span><span className='Created'>2017. Created by Kate Bulatova</span></h4>  
+                                <h5 className='logoText'><span className='go'>GO</span><span className='Created'>2017. Created by Kate Bulatova</span></h5>  
                             </div>
                             
                             <div className='footerTabsContainer'>
@@ -72,6 +109,11 @@ class App extends Component {
                                     </li> 
                                 </ul>
                             </div>
+
+                            <div className='bottomTabsButton' onClick={() => this.handleClick('footer')} style={{ color: this.state.btnColor }}>
+                                <FA className='buttonIcon' name='bars'/>
+                            </div>
+
                         </div>
                     </footer>
                     
